@@ -1,5 +1,5 @@
 # Link to the challenge: 
-# https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&isFullScreen=false&playlist_slugs%5B%5D%5B%5D%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D%5B%5D%5B%5D=arrays
+# https://www.hackerrank.com/challenges/2d-array/problem
 
 # Summary:
 # In a given a 6x6 array are 16 sets of 'hourglasses', like this:
