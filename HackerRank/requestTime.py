@@ -1,10 +1,7 @@
 # This problem was part of a technical challenge. I could NOT complete this task
 # I didn't save the problem statement nor test cases
 
-
-# The proble was something like this:
-
-
+# TODO: Complete later
 
 def droppedRequests(requestTime):
     dropped = 0
