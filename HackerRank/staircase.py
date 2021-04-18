@@ -4,6 +4,7 @@
 # Summary:
 # Write a function that will print a staircase using spaces and '#' characters
 
+
 def staircase(n):
     for row in range(n):
         for col in range(n):
@@ -12,6 +13,7 @@ def staircase(n):
             else:
                 print('#', end='')
         print("")
+
 
 if __name__ == '__main__':
     n = int(input())

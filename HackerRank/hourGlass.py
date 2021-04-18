@@ -1,4 +1,4 @@
-# Link to the challenge: 
+# Link to the challenge:
 # https://www.hackerrank.com/challenges/2d-array/problem
 
 # Summary:
@@ -7,15 +7,18 @@
 # - d -
 # e f g
 
-#The problem consists of finding all the sums of the different hourglasses and returning the biggest result of them all.
+# The problem consists of finding all the sums of the different hourglasses
+# and returning the biggest result of them all.
 
 
 def hourglassSum(arr):
     # Takes in a 6x6 array
     # Return: greater possible sum among all the possible hourglasses
-    
-    #! Notes for coding self: because of the size of the hourglass, the start (top-left) of it cannot be passed the row or col 3
-    #? In case of a different size of array, the limits would be defined by: numberOfRows - 3 / numberOfCols - 3
+
+    # ! Notes for coding self: because of the size of the hourglass,
+    # ! the start (top-left) of it cannot be passed the row or col 3
+    # ? In case of a different size of array, the limits would be defined by:
+    # ? numberOfRows - 3 / numberOfCols - 3
 
     posRow = 0
 
@@ -33,8 +36,9 @@ def hourglassSum(arr):
 
     return max(sums)
 
+
 if __name__ == '__main__':
-    #! Just a test case
+    # ! Just a test case
     array = [
         [1, 1, 1, 0, 0, 0],
         [0, 1, 0, 0, 0, 0],

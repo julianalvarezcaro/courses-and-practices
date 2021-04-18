@@ -1,7 +1,9 @@
-# This problem was part of a technical challenge. I could NOT complete this task
+# This problem was part of a technical challenge.
+# I could NOT complete this task
 # I didn't save the problem statement nor test cases
 
 # TODO: Complete later
+
 
 def droppedRequests(requestTime):
     dropped = 0
@@ -37,13 +39,14 @@ def droppedRequests(requestTime):
                 break
             tenSec += 1
         while(requestTime[pos] - requestTime[minSec] > 59):
-            #print("Im in min")
+            # print("Im in min")
             if minSec == pos - 1:
                 break
             minSec += 1
         pos += 1
     return dropped
 
+
 if __name__ == '__main__':
-    arr = [1,1,1,1,2]
+    arr = [1, 1, 1, 1, 2]
     print(droppedRequests(arr))
