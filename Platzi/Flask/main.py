@@ -1,7 +1,10 @@
 from flask import Flask, make_response, request, redirect, render_template
+from flask_bootstrap import Bootstrap, bootstrap_find_resource
 
 
 app = Flask(__name__)
+
+bootstrap = Bootstrap(app)
 
 todos = ['Comprar pan', 'Comprar leche', 'Comprar lo demás']
 
