@@ -1,20 +1,19 @@
-from flask import Flask, make_response, request, redirect, render_template, session
-from flask_bootstrap import Bootstrap, bootstrap_find_resource
-from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired
+from unittest.runner import TextTestResult
+from flask import make_response, request, redirect, render_template, session, flash
+from flask.helpers import url_for
+import unittest
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
+from app import create_app
+from app.forms import LoginForm
 
-app.config['SECRET_KEY'] = 'SUPER_SPY'
+app = create_app()
 
 todos = ['Comprar pan', 'Comprar leche', 'Comprar lo demás']
 
-class LoginForm(FlaskForm):
-    username = StringField('Nombre de usuario', validators=[DataRequired()])
-    password = PasswordField('Contraseña', validators=[DataRequired()])
-    submit = SubmitField('Enviar')
+@app.cli.command()
+def test():
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner().run(tests)
 
 @app.errorhandler(404)
 def not_found(error):
@@ -47,5 +46,13 @@ def hello():
         'todos': todos,
         'login_form': login_form
     }
+
+    if login_form.validate_on_submit():
+        username = login_form.username.data
+        session['username'] = username
+
+        flash('Nombre de usuario registrado con éxito.')
+
+        return redirect(url_for('index'))
 
     return render_template('hello.html', **context)
