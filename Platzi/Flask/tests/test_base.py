@@ -32,7 +32,10 @@ class  MainTest(TestCase):
             'username': 'fake',
             'password': 'fakepassword'
         }
-        response = self.client.post(url_for('hello'), data=fake_form)
+        response = self.client.post(url_for('hello'), data=fa ke_form)
 
         self.assertRedirects(response, url_for('index'))
+
+    def test_auth_blueprint_exists(self):
+        self.assertIn('auth', self)
 
