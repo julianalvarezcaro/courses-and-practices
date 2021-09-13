@@ -32,7 +32,7 @@ class  MainTest(TestCase):
             'username': 'fake',
             'password': 'fakepassword'
         }
-        response = self.client.post(url_for('hello'), data=fa ke_form)
+        response = self.client.post(url_for('hello'), data=fake_form)
 
         self.assertRedirects(response, url_for('index'))
 
