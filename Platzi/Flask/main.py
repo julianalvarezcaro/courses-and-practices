@@ -1,6 +1,4 @@
-from unittest.runner import TextTestResult
-from flask import make_response, request, redirect, render_template, session, flash
-from flask.helpers import url_for
+from flask import make_response, request, redirect, render_template, session, flash, url_for
 import unittest
 
 from app import create_app
