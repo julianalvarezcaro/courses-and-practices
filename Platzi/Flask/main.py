@@ -2,11 +2,12 @@ from flask import make_response, request, redirect, render_template, session, fl
 import unittest
 
 from app import create_app
+from app.firestore_service import get_users, get_todos
 from app.forms import LoginForm
 
 app = create_app()
 
-todos = ['Comprar pan', 'Comprar leche', 'Comprar lo demás']
+# todos = ['Comprar pan', 'Comprar leche', 'Comprar lo demás']
 
 @app.cli.command()
 def test():
@@ -41,8 +42,14 @@ def hello():
     username = session.get('username')
     context = {
         'user_ip': user_ip,
-        'todos': todos,
+        'todos': get_todos(user_id=username),
         'username': username
     }
+
+    users = get_users()
+
+    for user in users:
+        print(user.id)
+        print(user.to_dict()['password'])
 
     return render_template('hello.html', **context)
