@@ -3,7 +3,7 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, login_manager
 from .auth import auth
-from models import UserModel
+from app.models import UserModel
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
