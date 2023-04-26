@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
-	fmt.Println("Hola, mundo!")
+var a int
+type dinero int
+var b dinero
+
+func main () {
+	b = dinero(a)
+	fmt.Println(a)
 }
